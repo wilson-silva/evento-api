@@ -12,6 +12,12 @@ https://www.youtube.com/watch?v=qtHUwMqOYC0&list=PL8iIphQOyG-B0cdIn3_-agWEYaEsdT
 Disponibilizado pela profissional Michelli Brito
 
 
+## Swagger endpoints
+
+Para acessar e testar a app
+Acesso: localhost:8080/swagger-ui.html
+
+
 ## Tecnologias e ferramentas utilizadas
 - Java
 - Spring MVC
