@@ -28,6 +28,7 @@ public class EventoService {
         return evento.orElseThrow(() -> new EntityNotFoundException("Evento não encontrado"));
     }
 
+
     public Evento atualizarEvento(Evento evento, Long codigo){
         Evento eventoOriginal = this.buscarEvento(codigo);
         evento.setCodigo(eventoOriginal.getCodigo());

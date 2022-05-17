@@ -10,7 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Api(value ="API REST EVENTOS")
 @RestController
@@ -23,13 +27,24 @@ public class EventoResouce {
     @ApiOperation(value = "Retorna lista de eventos")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Evento> listaEvento(){
-        return eventoService.listarEvento();
+        List<Evento> listaEventos = eventoService.listarEvento();
+        ArrayList<Evento> eventos = new ArrayList<>();
+
+        for (Evento evento : listaEventos) {
+            Long codigo = evento.getCodigo();
+            evento.add(linkTo(methodOn(EventoResouce.class).buscaEvento(codigo)).withSelfRel());
+            eventos.add(evento);
+        }
+
+        return eventos;
     }
+
 
     @ApiOperation(value = "Busca um evento")
     @GetMapping(value = "{codigo}", produces = MediaType.APPLICATION_JSON_VALUE)
     public  ResponseEntity<Evento> buscaEvento(@PathVariable Long codigo){
         Evento evento = eventoService.buscarEvento(codigo);
+        evento.add(linkTo(methodOn(EventoResouce.class).listaEvento()).withRel("Lista de Eventos"));
         return ResponseEntity.ok(evento);
     }
 
