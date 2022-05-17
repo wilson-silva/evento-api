@@ -24,8 +24,11 @@ public class Evento {
     private String nome;
 
     @NotBlank
+    private String local;
+
+    @NotBlank
     private String Data;
 
     @NotBlank
-    private String horário;
+    private String horario;
 }
