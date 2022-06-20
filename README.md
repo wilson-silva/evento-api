@@ -46,7 +46,8 @@ localhost:8080/swagger-ui.html
 
 ![Modelo Conceitual](https://github.com/wilson-silva/eventoAPI/blob/main/tela1.png)
 
-## Tecnologias e ferramentas utilizadas
+## Tecnologias utilizadas
+### Back end
 - Java
 - Spring MVC
 - Spring Data
