@@ -12,11 +12,39 @@ https://www.youtube.com/watch?v=qtHUwMqOYC0&list=PL8iIphQOyG-B0cdIn3_-agWEYaEsdT
 Disponibilizado pela profissional Michelli Brito
 
 
-## Swagger endpoints
+## Como executar o projeto
 
-Para acessar e testar a app
-Acesso: localhost:8080/swagger-ui.html
+Pré-requisitos:
 
+* Java 17 ou versões superiores.
+* Maven 3.6.3 ou versões superiores.
+* Intellj IDEA Community Edition ou sua IDE favorita.
+* Controle de versão GIT instalado na sua máquina.
+
+```bash
+
+# clonar repositório
+git clone https://github.com/wilson-silva/eventoAPI
+
+# entrar na pasta do projeto evento
+cd evento ou abrir o bash dentro da pasta
+
+# executar o projeto
+./mvnw spring-boot:run
+
+```
+
+## Como testar o projeto
+
+### Swagger documentação
+OBS: Se quiser poderá testar a aplicação pelo POSTMAN.
+
+```bash
+# para acessar a documentação desta API
+localhost:8080/swagger-ui.html
+```
+
+![Modelo Conceitual](https://github.com/wilson-silva/eventoAPI/blob/main/tela1.png)
 
 ## Tecnologias e ferramentas utilizadas
 - Java
@@ -26,7 +54,6 @@ Acesso: localhost:8080/swagger-ui.html
 - Bean Validation
 - Maven
 - Mysql
-- Intellij
 
 
 ## Autor
